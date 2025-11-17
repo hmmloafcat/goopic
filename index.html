@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>goopic</title>
 
-    <!-- Google Font -->
+    <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -31,7 +31,7 @@
             font-size: 180px;
             border-radius: 50%;
             margin: 20px auto;
-            font-family: Arial, sans-serif; /* stays Google-like */
+            font-family: Arial, sans-serif; /* stays google-like */
         }
         button {
             padding: 10px 18px;
@@ -70,6 +70,7 @@
 
     <button onclick="updatePFP()">update</button>
     <button onclick="downloadPFP()">download</button>
+    <button onclick="randomColor()">random color</button>
 
     <div id="preview">D</div>
 
@@ -114,6 +115,14 @@
             link.download = "googlepfp.png";
             link.href = canvas.toDataURL();
             link.click();
+        }
+
+        // generates a random hex color and updates the picker and preview
+        function randomColor() {
+            // generate random color
+            const hex = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            document.getElementById("bgColor").value = hex;
+            updatePFP();
         }
     </script>
 
